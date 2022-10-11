@@ -33,13 +33,14 @@
     <string name="pref_view_mode_title">视图模式</string>
     <string name="pref_lang_title">语言</string>
     <string name="pref_code_group_size_title">分组显示验证码</string>
-    <string name="pref_code_group_size_summary">以 2 位分组而不是 3 位分组显示验证码</string>
+    <string name="pref_code_group_size_summary">选择将验证码分组分为几组</string>
     <string name="pref_account_name_title">显示帐户名称</string>
     <string name="pref_account_name_summary">在应用名称旁边显示账户名称</string>
     <string name="pref_import_file_title">从文件导入</string>
     <string name="pref_import_file_summary">从文件导入令牌</string>
     <string name="pref_android_backups_title">参与Android的备份系统</string>
     <string name="pref_android_backups_summary">允许Android的备份系统在其备份中包含Aegis的保险库。这只支持加密的保险库。</string>
+    <string name="pref_android_backups_hint"><i>无论上面设置为如何，设备到设备 (D2D)间的备份总是允许的。</i></string>
     <string name="pref_backups_title">自动备份保险库</string>
     <string name="pref_backups_summary">在外部存储上创建数据库的备份。仅加密的数据库支持此功能。</string>
     <string name="pref_backups_location_title">备份文件目录</string>
@@ -55,11 +56,17 @@
     <string name="pref_export_title">导出</string>
     <string name="pref_export_summary">导出数据库</string>
     <string name="pref_password_reminder_title">密码提醒</string>
+    <string name="pref_google_auth_export_title">导出到Google Authenticator</string>
+    <string name="pref_google_auth_export_descriptor">生成并导出兼容Google Authenticator的二维码</string>
+    <string name="pref_password_reminder_summary">每%s显示一次密码提醒来再次输入密码，以保证不会忘记。</string>
+    <string name="pref_password_reminder_summary_disabled">禁用</string>
     <string name="pref_secure_screen_title">屏幕安全</string>
     <string name="pref_secure_screen_summary">阻止屏幕截图，以及其他试图在本应用中捕获屏幕的行为</string>
     <string name="pref_tap_to_reveal_title">点击显示</string>
     <string name="pref_tap_to_reveal_summary">默认情况下，令牌将被隐藏。为了显示验证码，需要点击令牌。</string>
     <string name="pref_tap_to_reveal_time_title">点击令牌后，验证码的显示时间</string>
+    <string name="pref_backup_password_change_title">更改备份与导出的密码</string>
+    <string name="pref_backup_password_change_summary">设置一个新的密码用于加密备份和导出数据库。</string>
     <string name="pref_auto_lock_title">自动锁定</string>
     <string name="pref_auto_lock_summary">%s 时</string>
     <string name="pref_auto_lock_summary_disabled">已禁用</string>
@@ -67,6 +74,9 @@
     <string name="pref_auto_lock_type_back_button">返回按钮已按下</string>
     <string name="pref_auto_lock_type_minimize">应用被最小化</string>
     <string name="pref_auto_lock_type_device_lock">设备已锁定</string>
+    <string name="pref_backup_password_category">备份 &amp; 导出</string>
+    <string name="pref_backup_password_title">单独的备份&amp; 导出密码</string>
+    <string name="pref_backup_password_summary">如果启用，解锁应用的密码将不能再用于解密备份和导出文件。</string>
     <string name="pref_encryption_title">加密</string>
     <string name="pref_encryption_summary">加密数据库，并在解锁时要求密码或生物识别验证。</string>
     <string name="pref_biometrics_title">生物识别解锁</string>
@@ -98,7 +108,14 @@
     <string name="set_number">请选择时长</string>
     <string name="set_password_confirm">请确认密码</string>
     <string name="invalid_password">密码错误</string>
-    <string name="invalidated_biometrics">检测到你设备安全设置的一处更改。请转到 \"Aegis -&gt; 设置 -&gt; 安全性 -&gt; 生物解锁\"来禁用并重新启用生物解锁。</string>
+    <string name="invalidated_biometrics">检测到您设备安全设置的一处更改。请转到 \"Aegis -&gt; 设置 -&gt; 安全性 -&gt; 生物解锁\"来禁用并重新启用生物解锁。</string>
+    <string name="password_reminder_freq_never">从不</string>
+    <string name="password_reminder_freq_weekly">周</string>
+    <string name="password_reminder_freq_biweekly">两周</string>
+    <string name="password_reminder_freq_monthly">月</string>
+    <string name="password_reminder_freq_quarterly">季度(3个月)</string>
+    <string name="enter_password_2fas_message">似乎2FAS备份已加密. 请在下方输入密码.</string>
+    <string name="enter_password_aegis_title">请输入用于导入的密码</string>
     <string name="password_reminder">您已经有一段时间没有输入密码了。您还记得您的密码吗？</string>
     <string name="enter_password_authy_message">您的 Authy 令牌似乎已加密。请关闭 Aegis，打开 Authy，然后使用您的密码解锁令牌。另外，如果您在下面输入密码，Aegis 也可以尝试为您解密 Authy 令牌。</string>
     <string name="period_hint">时间间隔 (秒)</string>
@@ -157,12 +174,12 @@
     <string name="biometric_decrypt_error">尝试使用生物特征认证对数据库进行解密时发生错误。通常只有在更改设备的安全设置后才会发生这种情况。请使用您的密码解锁数据库，然后在 Aegis 的设置中重新配置生物特征认证。</string>
     <string name="biometric_init_error">尝试准备生物特征认证时发生错误。通常只有在更改设备的安全设置后才会发生这种情况。请使用您的密码解锁数据库，然后在 Aegis 的设置中重新配置生物特征认证。</string>
     <string name="disable_encryption">禁用加密</string>
-    <string name="disable_encryption_description">你确定要禁用加密吗？这将导致密码库存储在纯文本中。 <b>自动备份也将被禁用</b>。</string>
+    <string name="disable_encryption_description">您确定要禁用加密吗？这将导致密码库存储在纯文本中。 <b>自动备份也将被禁用</b>。</string>
     <string name="enable_encryption_error">启用加密时出错</string>
     <string name="disable_encryption_error">禁用加密时出错</string>
     <string name="backup_successful">成功设定了定期备份任务</string>
     <string name="backup_error">尝试创建备份时发生错误</string>
-    <string name="documentsui_error">你的设备上似乎缺少 DocumentsUI。这是选择和创建文档所必需的重要系统组件。如果你使用过工具来&quot;精简&quot;系统组件，你可能不小心删除了它，必须重新安装它。</string>
+    <string name="documentsui_error">您的设备上似乎缺少 DocumentsUI。这是选择和创建文档所必需的重要系统组件。如果您使用过工具来&quot;精简&quot;系统组件，您可能不小心删除了它，必须重新安装它。</string>
     <string name="icon_pack_import_error">试图导入图标包时出错</string>
     <string name="icon_pack_import_exists_error">您试图导入的图标包已经存在。您想要覆盖它吗？</string>
     <string name="icon_pack_delete_error">试图删除图标包时出错</string>
@@ -224,6 +241,8 @@
     <string name="clear">清空</string>
     <string name="pref_highlight_entry_title">点击时高亮令牌</string>
     <string name="pref_highlight_entry_summary">使令牌在点击后暂时高亮显示以便区分</string>
+    <string name="pref_minimize_on_copy_title">复制后最小化</string>
+    <string name="pref_minimize_on_copy_summary">复制令牌后最小化应用</string>
     <string name="pref_copy_on_tap_title">点击时复制令牌</string>
     <string name="pref_copy_on_tap_summary">通过点击将令牌复制到剪贴板</string>
     <string name="pref_pause_entry_title">轻按冻结令牌</string>
@@ -268,7 +287,7 @@
     <string name="about_support">支持</string>
     <string name="support_rate">评分</string>
     <string name="support_rate_description">通过在 Google Play 商店留下评论来支持我们</string>
-    <string name="webview_error">此设备不支持 webview，这是查看变更记录和许可证所必需的。你的系统缺少这一组件。</string>
+    <string name="webview_error">此设备不支持 webview，这是查看变更记录和许可证所必需的。您的系统缺少这一组件。</string>
     <string name="email">电子邮件</string>
     <string name="time_sync_warning_title">自动同步时间</string>
     <string name="time_sync_warning_message">Aegis 依靠系统时间来同步生成正确的验证码。仅几秒钟的偏差可能会导致验证码错误。您的设备似乎未配置为自动同步时间。您现在要设置自动同步时间吗？</string>
@@ -279,6 +298,13 @@
     </plurals>
     <string name="google_qr_export_unexpected">预期二维码 #%d，已扫描 #%d</string>
     <string name="backup_error_bar_message"><b>数据库最近备份失败</b></string>
+    <string name="backup_error_dialog_details">因为一个错误最近的数据库 %s 备份失败. 备份尝试在: %s. 请检查您的备份设定以保证被分成功。</string>
+    <string name="backup_system_builtin">Aegis内置的自动备份</string>
+    <string name="backup_system_android">Android的云备份系统</string>
+    <string name="backup_reminder_bar_message"><b>最近的数据库变更没有被备份</b></string>
+    <string name="backup_plaintext_export_warning"><b>数据库最近被以纯文本方式导出</b></string>
+    <string name="pref_show_plaintext_warning_hint">不再显示这条警告</string>
+    <string name="backup_plaintext_warning_explanation">之所以显示这条警告是因为您最近将数据库以未加密方式导出. 为保证您的令牌的安全性， 我们建议您一旦不需要这个文件时请将它删除.</string>
     <string name="switch_camera">切换摄像头</string>
     <string name="empty_list">没有可显示的验证码。点击右下角的加号，开始添加条目</string>
     <string name="empty_list_title">未找到条目</string>
@@ -317,9 +343,9 @@
     <string name="importer_help_2fas">提供一个 2FAS 身份验证器备份文件。</string>
     <string name="importer_help_aegis">提供Aegis导出/备份文件。</string>
     <string name="importer_help_authenticator_plus">提供通过<b>设置-&gt; 备份&amp; 还原-&gt; 导出获取的Authenticator Plus导出文件，格式为纯文本和HTML</b>。</string>
-    <string name="importer_help_authy">提供<b>/data/data/com.authy.authy/shared_prefs/com.authy.storage.tokens.authenticator.xml</b>的一份副本，位置在Authy的内部存储目录。</string>
+    <string name="importer_help_authy">提供<b>/data/data/com.authy.authy/shared_prefs/com.authy.storage.令牌s.authenticator.xml</b>的一份副本，位置在Authy的内部存储目录。</string>
     <string name="importer_help_andotp">提供 andOTP 导出/备份文件。</string>
-    <string name="importer_help_freeotp">提供<b>/data/data/org.fedorahosted.freeotp/shared_prefs/tokens.xml</b>的一份副本，位置在FreeOTP的内部存储目录。</string>
+    <string name="importer_help_freeotp">提供<b>/data/data/org.fedorahosted.freeotp/shared_prefs/令牌s.xml</b>的一份副本，位置在FreeOTP的内部存储目录。</string>
     <string name="importer_help_freeotp_plus">提供 FreeOTP+ 导出文件。</string>
     <string name="importer_help_google_authenticator">提供 <b>/data/data/com.google.android.apps.authenticator2/databases/databases</b>的一份副本，它位于Google Authenticator的内部存储目录。</string>
     <string name="importer_help_microsoft_authenticator">提供一个 <b>/data/data/com.azure.authenticator/databases/PhoneFactor</b>的一份副本，它的位置在微软身份验证器的内部存储目录。</string>
@@ -329,4 +355,12 @@
     <string name="importer_help_winauth">提供 WinAuth 导出文件。</string>
     <string name="importer_help_direct">直接导入来自%s的条目。这要求将应用程序安装在此设备上，并授予Aegis根访问权限。</string>
     <string name="groups">群组</string>
+    <string name="pref_focus_search">应用启动时弹出搜索</string>
+    <string name="pref_focus_search_summary">应用启动后立刻自动弹出搜索.</string>
+
+    <string name="pref_grouping_halves">分成2组</string>
+    <string name="pref_grouping_none">不分组</string>
+    <string name="pref_grouping_size_two">2个一组</string>
+    <string name="pref_grouping_size_three">3个一组</string>
+    <string name="pref_grouping_size_four">4个一组</string>
 </resources>
